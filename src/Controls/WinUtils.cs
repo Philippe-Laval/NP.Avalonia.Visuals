@@ -4,6 +4,7 @@ using System;
 
 namespace NP.Avalonia.Visuals.Controls
 {
+    /*
     public static class WinUtils
     {
         public static IPlatformHandle GetPlatformHandle(this Window window)
@@ -16,4 +17,5 @@ namespace NP.Avalonia.Visuals.Controls
             return window.GetPlatformHandle().Handle;
         }
     }
+    */
 }

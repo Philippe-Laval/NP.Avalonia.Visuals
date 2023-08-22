@@ -73,7 +73,8 @@ namespace NP.Avalonia.Visuals.Behaviors
         {
             string oldClassesStr = change.OldValue.Value;
 
-            IStyledElement sender = change.Sender as IStyledElement;
+            StyledElement? sender = change.Sender as StyledElement;
+            if (sender is null) return;
 
             if (oldClassesStr != null)
             {
@@ -92,7 +93,8 @@ namespace NP.Avalonia.Visuals.Behaviors
 
         private static void OnClassesChanged(AvaloniaPropertyChangedEventArgs<string> change)
         {
-            IStyledElement sender = change.Sender as IStyledElement;
+            StyledElement? sender = change.Sender as StyledElement;
+            if (sender is null) return;
 
             string classesStr = change.NewValue.Value;
 
@@ -102,12 +104,17 @@ namespace NP.Avalonia.Visuals.Behaviors
 
                 if (classes != null)
                 {
-                    sender.Classes = new Classes(classes);
+                    // PLL ?
+                    //sender.Classes = new Classes(classes);
+                    sender.Classes.Clear();
+                    sender.Classes.AddRange(classes);
                     return;
                 }
             }
 
-            sender.Classes = new Classes();
+            // PLL ?
+            //sender.Classes = new Classes();
+            sender.Classes.Clear();
         }
     }
 }

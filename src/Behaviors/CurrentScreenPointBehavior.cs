@@ -22,6 +22,7 @@ using System.Reactive.Subjects;
 
 namespace NP.Avalonia.Visuals.Behaviors
 {
+    /*
     public static class CurrentScreenPointBehavior
     {
         private static Subject<Point2D> _currentScreenPoint = new Subject<Point2D>();
@@ -38,6 +39,8 @@ namespace NP.Avalonia.Visuals.Behaviors
 
         private static void OnInputReceived(RawInputEventArgs e)
         {
+            if (e is not null) return;
+
             if (!e.Handled && e is RawPointerEventArgs margs)
                 ProcessRawEvent(margs);
         }
@@ -98,4 +101,5 @@ namespace NP.Avalonia.Visuals.Behaviors
             PointerReleasedEvent?.Invoke();
         }
     }
+    */
 }

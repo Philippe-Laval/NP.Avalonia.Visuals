@@ -22,9 +22,9 @@ namespace NP.Avalonia.Visuals.Converters
     {
         public static ToWindowIconConverter Instance { get; } = new ToWindowIconConverter();
 
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
         {
-            if (value is IBitmap bitmap)
+            if (value is Bitmap bitmap)
             {
                 return new WindowIcon(bitmap);
             }
@@ -42,7 +42,7 @@ namespace NP.Avalonia.Visuals.Converters
             return null;
         }
 
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
         {
             throw new NotImplementedException();
         }

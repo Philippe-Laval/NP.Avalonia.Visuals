@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 
 namespace NP.Avalonia.Visuals.WindowsOnly
 {
+    /*
     public static class ImplantWindowUtils
     {
         public static void ImplantWindow(this Window parentWindow, nint windowToImplantHandle)
@@ -45,4 +46,5 @@ namespace NP.Avalonia.Visuals.WindowsOnly
             }
         }
     }
+    */
 }

@@ -5,6 +5,7 @@ using System;
 
 namespace NP.Avalonia.Visuals.Controls
 {
+    /*
     public class ImplantedWindowHostContainer : Decorator
     {
         #region ImplantedWindowHandle Styled Avalonia Property
@@ -94,4 +95,5 @@ namespace NP.Avalonia.Visuals.Controls
             base.OnDetachedFromVisualTree(e);
         }
     }
+    */
 }

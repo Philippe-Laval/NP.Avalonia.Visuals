@@ -21,21 +21,21 @@ namespace NP.Avalonia.Visuals.Behaviors
 
                 if (_value != null)
                 {
-                    _subject = new BehaviorSubject<object>(_value);
+                    _subject = new BehaviorSubject<object?>(_value);
                 }
             }
         }
 
-        private BehaviorSubject<object>? _subject;
+        private BehaviorSubject<object?>? _subject;
 
-        public InstancedBinding Initiate
-        (
-            IAvaloniaObject target, 
-            AvaloniaProperty targetProperty, 
-            object? anchor = null, 
-            bool enableDataValidation = false)
+        
+
+        public InstancedBinding? Initiate(AvaloniaObject target, AvaloniaProperty? targetProperty, object? anchor = null, bool enableDataValidation = false)
         {
-            return new InstancedBinding(_subject, BindingMode.OneWay, BindingPriority.LocalValue);
+            if (_subject is not null) 
+                return InstancedBinding.OneWay(_subject, BindingPriority.LocalValue);
+
+            return null;
         }
     }
 }

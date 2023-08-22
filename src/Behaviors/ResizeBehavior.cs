@@ -6,6 +6,7 @@ using NP.Utilities;
 
 namespace NP.Avalonia.Visuals.Behaviors
 {
+    /*
     public class ResizeBehavior
     {
         private CustomWindow _window;
@@ -98,4 +99,5 @@ namespace NP.Avalonia.Visuals.Behaviors
             SetPositionAndSize(e);
         }
     }
+    */
 }

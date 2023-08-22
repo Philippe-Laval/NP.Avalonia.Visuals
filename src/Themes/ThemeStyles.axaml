@@ -235,8 +235,8 @@
 				Value="1"/>
 	</Style>
 
-	<StyleInclude Source="resm:Avalonia.Themes.Default.PopupRoot.xaml?assembly=Avalonia.Themes.Default"/>
-	<StyleInclude Source="resm:Avalonia.Themes.Default.ScrollViewer.xaml?assembly=Avalonia.Themes.Default"/>
+	
+	
 
 	<Style Selector="ComboBoxItem">
 		<Setter Property="Background" Value="Transparent"/>
@@ -268,58 +268,7 @@
 		<Setter Property="Background" Value="{DynamicResource AccentBrush}"/>
 	</Style>
 
-	<Style Selector="np|NpComboBox.Theme">
-		<Setter Property="MaxDropDownHeight"
-				Value="200"/>
-		<Setter Property="HorizontalContentAlignment"
-				Value="Stretch"/>
-		<Setter Property="VerticalContentAlignment"
-				Value="Stretch"/>
-		<Setter Property="np:AttachedProperties.IconWidth"
-				Value="12"/>
-		<Setter Property="np:AttachedProperties.IconMargin"
-				Value="5,5,0,2"/>
-		<Setter Property="Height"
-				Value="26.4"/>
-		<Setter Property="np:AttachedProperties.IconData"
-				Value="{StaticResource EmptyArrowDownIcon}"/>
-		<Setter Property="np:AttachedProperties.MainPartTemplate">
-			<Setter.Value>
-				<ControlTemplate>
-					<Grid ColumnDefinitions="*, Auto">
-						<ContentPresenter Content="{Binding $parent[ComboBox].SelectionBoxItem}"
-										  ContentTemplate="{Binding $parent[ComboBox].ItemTemplate}"
-										  Focusable="False"/>
-						<Path Classes="IconInsideControl"
-							  Grid.Column="1"/>
-						<Popup Name="PART_Popup"
-							   IsOpen="{Binding $parent[ComboBox].IsDropDownOpen, Mode=TwoWay}"
-							   MinWidth="{Binding $parent[ComboBox].Bounds.Width}"
-							   MaxHeight="{Binding $parent[ComboBox].MaxDropDownHeight}"
-							   PlacementTarget="{Binding $parent[ComboBox]}"
-							   PlacementMode="Bottom"
-							   IsLightDismissEnabled="True">
-							<Border Background="{DynamicResource SectionBackgroundBrush}"
-									BorderBrush="{DynamicResource SectionBorderBrush}"
-									BorderThickness="1">
-								<ScrollViewer HorizontalScrollBarVisibility="{Binding $parent[ComboBox].HorizontalScrollBarVisibility}"
-											  VerticalScrollBarVisibility="{Binding $parent[ComboBox].VerticalScrollBarVisibility}">
-									<np:NpItemsPresenter x:Name="ComboItemsPresenter"
-														Items="{Binding $parent[ComboBox].Items, Mode=OneWay}"
-														ItemsPanel="{Binding $parent[ComboBox].ItemsPanel}"
-														ItemTemplate="{Binding $parent[ComboBox].ItemTemplate, Mode=OneWay}"
-														VirtualizationMode="{Binding $parent[ComboBox].VirtualizationMode}">
-
-
-									</np:NpItemsPresenter>
-								</ScrollViewer>
-							</Border>
-						</Popup>
-					</Grid>
-				</ControlTemplate>
-			</Setter.Value>
-		</Setter>
-	</Style>
+	
 
 	<Style Selector="np|ActionIndicator.RoundIndicator">
 		<Setter Property="IsVisible"
@@ -354,7 +303,7 @@
 	<Style Selector="np|ActionIndicator.RoundIndicator[IsOn=True]">
 		<Style.Animations>
 			<Animation Duration="0:0:1.1"
-					   RepeatCount="INFINITE">
+					   IterationCount="INFINITE">
 				<KeyFrame Cue="100%">
 					<Setter Property="RotateTransform.Angle"
 							Value="360"/>

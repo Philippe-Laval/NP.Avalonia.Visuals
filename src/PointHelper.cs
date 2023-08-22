@@ -68,7 +68,7 @@ namespace NP.Avalonia.Visuals
             return bounds.ContainsPoint(p.ToPoint2D());
         }
 
-        public static Rect2D GetScreenBounds(this IInputElement c)
+        public static Rect2D GetScreenBounds(this Visual c)
         {
             PixelPoint startPoint = 
                 c.PointToScreen(new Point(0, 0));
@@ -78,6 +78,8 @@ namespace NP.Avalonia.Visuals
 
             return new Rect2D(startPoint.ToPoint2D(), endPoint.ToPoint2D());
         }
+
+
 
         public static bool IsPointerWithinControl(this Control c, PointerEventArgs e)
         {

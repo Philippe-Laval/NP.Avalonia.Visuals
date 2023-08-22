@@ -9,6 +9,7 @@ using NP.Avalonia.Visuals.WindowsOnly;
 
 namespace NP.Avalonia.Visuals.Controls
 {
+    /*
     public class ImplantedWindowHost : NativeControlHost
     {
         private IntPtr _implantedWindowHandle;
@@ -69,4 +70,5 @@ namespace NP.Avalonia.Visuals.Controls
             }
         }
     }
+    */
 }

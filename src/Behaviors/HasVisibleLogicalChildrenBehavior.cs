@@ -8,6 +8,7 @@ using System.Linq;
 
 namespace NP.Avalonia.Visuals.Behaviors
 {
+    /*
     public class HasVisibleLogicalChildrenBehavior : LogicalChildBehavior
     {
         private Dictionary<ILogical, IDisposable> _subscriptionDictionary = 
@@ -15,7 +16,7 @@ namespace NP.Avalonia.Visuals.Behaviors
 
         protected override void OnChildAdded(ILogical childObj)
         {
-            IControl child = (IControl)childObj;
+            Control child = (Control)childObj;
 
             IDisposable subscriptionToken = 
                 child.GetObservable(Visual.IsVisibleProperty).Subscribe(OnIsChildVisibleChanged);
@@ -32,7 +33,7 @@ namespace NP.Avalonia.Visuals.Behaviors
 
         private void ResetHasVisibleChildren()
         {
-            bool hasVisibleLogicalChildren = TheControl.LogicalChildren.Any(c => (c as IControl).IsVisible);
+            bool hasVisibleLogicalChildren = TheControl.LogicalChildren.Any(c => (c as Control).IsVisible);
 
             AttachedProperties.SetHasVisibleLogicalChildren(TheControl, hasVisibleLogicalChildren);
         }
@@ -48,4 +49,5 @@ namespace NP.Avalonia.Visuals.Behaviors
             ResetHasVisibleChildren();
         }
     }
+    */
 }

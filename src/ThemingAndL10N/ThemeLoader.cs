@@ -8,6 +8,7 @@ using NP.ViewModelInterfaces.ThemingAndL10N;
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading;
 
 namespace NP.Avalonia.Visuals.ThemingAndL10N
 {
@@ -58,7 +59,7 @@ namespace NP.Avalonia.Visuals.ThemingAndL10N
 
         public bool HasResources => Loaded.HasResources;
 
-        public bool TryGetResource(object key, out object? value)
+        public bool TryGetResource(object key, ThemeVariant? theme, out object? value)
         {
             if (key.ObjEquals(_styleResourceName))
             {
@@ -66,12 +67,12 @@ namespace NP.Avalonia.Visuals.ThemingAndL10N
                 return true;
             }
 
-            return Loaded.TryGetResource(key, out value);
+            return Loaded.TryGetResource(key, theme, out value);
         }
 
-        public T GetResource<T>(object key, T defaultValue = default)
+        public T GetResource<T>(object key, ThemeVariant? theme, T defaultValue = default)
         {
-            if (TryGetResource(key, out object result))
+            if (TryGetResource(key, theme, out object result))
             {
                 return (T) result;
             }
@@ -234,5 +235,7 @@ namespace NP.Avalonia.Visuals.ThemingAndL10N
 
             this.SelectedThemeId = Themes.ElementAt(nextThemeIdx).Id;
         }
+
+        
     }
 }

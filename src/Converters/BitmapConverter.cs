@@ -11,17 +11,17 @@ namespace NP.Avalonia.Visuals.Converters
     {
         public static BitmapConverter Instance { get; } = new BitmapConverter();
 
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        public object Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
         {
             if (value == null)
                 return null;
-            var assets = AvaloniaLocator.Current.GetService<IAssetLoader>();
+
             Uri uri = new Uri(value.ToString(), UriKind.Absolute);
 
-            return new Bitmap(assets.Open(uri));
+            return new Bitmap(AssetLoader.Open(uri));
         }
 
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
         {
             throw new NotImplementedException();
         }

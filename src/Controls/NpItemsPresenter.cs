@@ -10,10 +10,16 @@ using System.Linq;
 
 namespace NP.Avalonia.Visuals.Controls
 {
+    public class NpItemsPresenter : ItemsPresenter
+    {
+
+    }
+
+    /*
     public class NpItemsPresenter : ItemsPresenter, IItemsPresenter, IChildIndexProvider
     {
         private EventHandler<ChildIndexChangedEventArgs>? _childIndexChanged;
-        private IItemContainerGenerator? _itemContainerGenerator;
+        private ItemContainerGenerator? _itemContainerGenerator;
         
         event EventHandler<ChildIndexChangedEventArgs>? IChildIndexProvider.ChildIndexChanged
         {
@@ -28,12 +34,12 @@ namespace NP.Avalonia.Visuals.Controls
             this.GetObservable(FindLogicalAncestorBehavior.AncestorProperty).Subscribe(OnAncestorChanged!);
         }
 
-        private void OnAncestorChanged(IControl ancestor)
+        private void OnAncestorChanged(Control ancestor)
         {
             (ancestor as IItemsPresenterHost)?.RegisterItemsPresenter(this);
         }
 
-        protected override IItemContainerGenerator CreateItemContainerGenerator()
+        protected override ItemContainerGenerator CreateItemContainerGenerator()
         {
             if (_itemContainerGenerator == null)
             {
@@ -68,4 +74,5 @@ namespace NP.Avalonia.Visuals.Controls
             }
         }
     }
+    */
 }

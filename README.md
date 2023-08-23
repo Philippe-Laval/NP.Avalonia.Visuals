@@ -7,3 +7,5 @@ To checkout (together with the submodules so that you could build the demos) use
 git clone https://github.com/npolyak/NP.Avalonia.Visuals.git --recursive
 
 To build the demos go to Demos/<DemoFolder> and open the corresponding solution. E.g go to Demos\MultiPlatformWindowDemo folder and open solution MultiPlatformWindowDemo.sln
+
+Port the code to Avalonia 11.0.4
